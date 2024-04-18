@@ -1,336 +1,346 @@
 @import "./assets/colors";
 @import "./assets/breakpoints";
 
-  .header {
-    background-color: $black;
-    color: $white;
+.App {
+  background-color: $bona-fide;
+}
+
+.header {
+  background-color: $black;
+  color: $white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__logo {
+    width: 100px;
+    height: 35px;
+  }
+
+  &__menu-wrapper {
     display: flex;
-    justify-content: space-between;
+  }
+
+  &__button-container {
+    display: none;
+    height: 20px;
+    width: 30px;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
+  }
 
-    &__logo {
-      width: 100px;
-      height: 35px;
-    }
+  #menu-toggle {
+    display: none;
+  }
 
-    &__menu-wrapper {
-      display: flex;
-    }
+  &__button,
+  &__button::before,
+  &__button::after {
+    display: block;
+    background-color: #fff;
+    position: absolute;
+    height: 4px;
+    width: 30px;
+    transition: transform 0.4s ease-in-out;
+    border-radius: 2px;
+  }
 
-    &__button-container {
-      display: none;
-      height: 20px;
-      width: 30px;
-      cursor: pointer;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-    }
-
-    #menu-toggle {
-      display: none;
-    }
-
-    &__button,
-    &__button::before,
-    &__button::after {
-      display: block;
-      background-color: #fff;
-      position: absolute;
-      height: 4px;
-      width: 30px;
-      transition: transform 0.4s ease-in-out;
-      border-radius: 2px;
-    }
-
-    &__button::before {
-      content: '';
-      margin-top: -8px;
-    }
-    
-    &__button::after {
-      content: '';
-      margin-top: 8px;
-    }
-
-    #menu-toggle:checked + &__button-container &__button::before {
-      margin-top: 0px;
-      transform: rotate(225deg);
-    }
-
-    #menu-toggle:checked + &__button-container &__button {
-      background: rgba(255, 255, 255, 0);
-    }
-
-    #menu-toggle:checked + &__button-container &__button::after {
-      margin-top: 0px;
-      transform: rotate(-225deg);
-    }
-
-    &__menu {
-      list-style-type: none;
-      display: flex;
-      gap: 40px;
-
-      li {
-        overflow: hidden;
-      }
-
-      a {
-        text-align: center;
-        width: 100%;
-        color: $white;
-        text-decoration: none;
-      }
-
-      a:hover {
-        color: transparent;
-        background-image: linear-gradient(98.25deg, #EBFF00 18.56%, #FF70D9 76.02%);
-        -webkit-background-clip: text;
-        background-clip: text;
-      }
-
-    }
-
-    &__basket-logo {
-      fill: $white;
-    }
-
-    svg:hover {
-      fill: url(#gradient);
-    }
-
-    // &__basket-logo ~path:hover {
-    //   fill: linear-gradient(98.25deg, #EBFF00 18.56%, #FF70D9 76.02%);
-    // }
+  &__button::before {
+    content: '';
+    margin-top: -8px;
   }
   
-  .banner {
-    background: 
-      url("./assets/images/earth_logo.svg") right/300px no-repeat,
-      linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(15, 20, 32, 0.79) 100%),
-      url("./assets/images/banner_logo.svg") center/cover no-repeat;
+  &__button::after {
+    content: '';
+    margin-top: 8px;
+  }
 
-      &__title {
-        color: $white;
-        font-size: 6vw;
-  
-        & span {
-          color: $rose-pink;
-        }
-      }
-  
-      &__subTitle {
-        color: $white;
-        font-size: 3vw;
-  
-        & span {
-          color: $banana-flash;
-        }
-      }
-  
-      &__button {
-        cursor: pointer;
-        color: $black;
-        background-color: $banana-flash;
-        border: 0;
-        border-radius: 20px;
-        font-size: 22px;
-        padding: 8px 15px;
-      }
+  #menu-toggle:checked + &__button-container &__button::before {
+    margin-top: 0px;
+    transform: rotate(225deg);
+  }
 
-      &__button:hover {
-        background-color: #EBFF0099;
+  #menu-toggle:checked + &__button-container &__button {
+    background: rgba(255, 255, 255, 0);
+  }
+
+  #menu-toggle:checked + &__button-container &__button::after {
+    margin-top: 0px;
+    transform: rotate(-225deg);
+  }
+
+  &__menu {
+    list-style-type: none;
+    display: flex;
+    gap: 40px;
+
+    li {
+      overflow: hidden;
+    }
+
+    a {
+      text-align: center;
+      width: 100%;
+      color: $white;
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: transparent;
+      background-image: linear-gradient(98.25deg, #EBFF00 18.56%, #FF70D9 76.02%);
+      -webkit-background-clip: text;
+      background-clip: text;
+    }
+
+  }
+
+  &__basket-logo {
+    fill: $white;
+  }
+
+  svg:hover {
+    fill: url(#gradient);
+  }
+
+  // &__basket-logo ~path:hover {
+  //   fill: linear-gradient(98.25deg, #EBFF00 18.56%, #FF70D9 76.02%);
+  // }
+}
+
+.banner {
+  background: 
+    url("./assets/images/earth_logo.webp") right/300px no-repeat,
+    linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(15, 20, 32, 0.79) 100%),
+    url("./assets/images/banner_logo.webp") center/cover no-repeat;
+
+    &__title {
+      color: $white;
+      font-size: 6vw;
+
+      & span {
+        color: $rose-pink;
       }
+    }
+
+    &__subTitle {
+      color: $white;
+      font-size: 3vw;
+
+      & span {
+        color: $banana-flash;
+      }
+    }
+
+    &__button {
+      cursor: pointer;
+      color: $black;
+      background-color: $banana-flash;
+      border: 0;
+      border-radius: 20px;
+      font-size: 22px;
+      padding: 8px 25px;
+    }
+
+    &__button:hover {
+      background-color: #EBFF0099;
+    }
+}
+
+.body {
+  color: $white;
+  background-color: $bona-fide;
+
+  &__label {
+    font-size: 2vw;
+  }
+
+  .offers {
+    padding: 35px 0;
+    display: grid;
+    grid-column-gap: 30px;
+    grid-row-gap: 30px;
+    grid-template-areas: 
+      "A A"
+      "B C"
+      "D D";
+
+    &__item {
+      gap: 15px;
+      border-radius: 10px;
+      padding: 40px 20px;
+      text-align: left;
+      display: flex;
+      justify-content: flex-end;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    &__item-1 {
+      background: 
+        linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(15, 20, 32, 0.79) 100%),
+        url("./assets/images/item-1.webp") center/cover no-repeat;
+      grid-area: A;
+    }
+
+
+    &__item-2 {
+      background: 
+        linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(15, 20, 32, 0.79) 100%),
+        url("./assets/images/item-2.webp") center/cover no-repeat;
+      
+      grid-area: B;
+    }
+
+    &__item-3 {
+      background: 
+        linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(15, 20, 32, 0.79) 100%),
+        url("./assets/images/item-3.webp") center/cover no-repeat;
+      grid-area: C;
+    }
+
+    &__item-4 {
+      background: 
+        linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(15, 20, 32, 0.79) 100%),
+        url("./assets/images/item-4.webp") center/cover no-repeat;
+      grid-area: D;
+    }
+
+    &__title {
+      font-size: 4vw;
+      margin: 0;
+    }
+
+    &__subTitle {
+      font-size: 2vw;
+      margin: 0;
+    }
+
+    &__button {
+      color: $banana-flash;
+      background: none;
+      border: 2px $banana-flash solid;
+      border-radius: 20px;
+      font-size: 16px;
+      padding: 5px 25px;
+      cursor: pointer;
+    }
+
+    &__button:hover {
+      border-color: #EBFF0099;
+      color: #EBFF0099;
+    }
+  }
+
+  &__info {
+    align-items: flex-start;
+    flex-direction: column;
+    display: flex;
+    color: $white;
+    font-size: 18px;
+    line-height: 24px;
+
+    &-text {
+      font-weight: 300;
+      margin: 0;
+    }
+
+    #info-toggle {
+      display: none;
+    }
+
+    &-trigger {
+      margin-top: 15px;
+      padding: 0;
+      background: 0;
+      border: 0;
+      color: $banana-flash;
+      cursor: pointer;
+      font-weight: 800;
+    }
+
+    &-trigger:hover {
+      color: #EBFF0099;
+    }
+
+    &-target {
+      opacity: 0;
+      font-size: 0;
+      transition: .25s ease;
+      font-weight: 300;
+    }
+
+    #info-toggle:checked ~ &-text &-target {
+      opacity: 1;
+      font-size: inherit;
+    }
+
+    #info-toggle ~ &-trigger::before {
+      content: 'Read more';
+    }
+
+    #info-toggle:checked ~ &-trigger::before {
+      content: 'Read less';
+    }
+  }
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: $black;
+  padding: 20px 0;
+  gap: 5px;
+
+  &__rocketLogo {
+    width: 50px;
+    height: 55px;
+  }
+
+  &__text {
+    color: $banana-flash;
+  }
+}
+
+.header {
+  padding: 10px 55px;
+}
+
+.banner,
+.body {
+  padding: 40px 55px;
+}
+
+  
+
+@media (max-width: $desktop-view) {
+  .banner,
+  .body {
+    padding: 30px 20px;
+  }
+
+  .header {
+    padding: 10px 20px;
   }
 
   .body {
-    color: $white;
-    background-color: $bona-fide;
-
     &__label {
-      font-size: 32px;
+      font-size: 24px;
     }
 
     .offers {
-      padding: 35px 0;
-      display: grid;
-      grid-column-gap: 30px;
-      grid-row-gap: 30px;
       grid-template-areas: 
-        "A A"
-        "B C"
-        "D D";
+        "A B"
+        "C D";
 
       &__item {
-        gap: 15px;
-        border-radius: 10px;
-        padding: 40px 20px;
-        text-align: left;
-        display: flex;
-        justify-content: flex-end;
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      &__item-1 {
-        background: 
-          linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(15, 20, 32, 0.79) 100%),
-          url("./assets/images/item-1.svg") center/cover no-repeat;
-        grid-area: A;
-      }
-
-
-      &__item-2 {
-        background: 
-          linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(15, 20, 32, 0.79) 100%),
-          url("./assets/images/item-2.svg") center/cover no-repeat;
-        
-        grid-area: B;
-      }
-
-      &__item-3 {
-        background: 
-          linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(15, 20, 32, 0.79) 100%),
-          url("./assets/images/item-3.svg") center/cover no-repeat;
-        grid-area: C;
-      }
-
-      &__item-4 {
-        background: 
-          linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(15, 20, 32, 0.79) 100%),
-          url("./assets/images/item-4.svg") center/cover no-repeat;
-        grid-area: D;
-      }
-
-      &__title {
-        font-size: 4vw;
-        margin: 0;
-      }
-
-      &__subTitle {
-        font-size: 2vw;
-        margin: 0;
-      }
-
-      &__button {
-        color: $banana-flash;
-        background: none;
-        border: 2px $banana-flash solid;
-        border-radius: 20px;
-        font-size: 22px;
-        padding: 8px 15px;
-        cursor: pointer;
-      }
-
-      &__button:hover {
-        border: 2px solid #EBFF0099;
-        color: #EBFF0099;
-      }
-    }
-
-    &__info {
-      align-items: flex-start;
-      flex-direction: column;
-      display: flex;
-      color: $white;
-      font-size: 18px;
-      line-height: 24px;
-
-      &-text {
-        margin: 0;
-      }
-
-      #info-toggle {
-        display: none;
-      }
-
-      &-trigger {
-        margin-top: 15px;
-        padding: 0;
-        background: 0;
-        border: 0;
-        color: $banana-flash;
-        cursor: pointer;
-        font-weight: 800;
-      }
-
-      &-trigger:hover {
-        color: #EBFF0099;
-      }
-
-      &-target {
-        opacity: 0;
-        font-size: 0;
-        transition: .25s ease;
-      }
-
-      #info-toggle:checked ~ &-text &-target {
-        opacity: 1;
-        font-size: inherit;
-      }
-
-      #info-toggle ~ &-trigger::before {
-        content: 'Read more';
-      }
-
-      #info-toggle:checked ~ &-trigger::before {
-        content: 'Read less';
+        height: 310px;
       }
     }
   }
-
-  .footer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: $black;
-    padding: 20px 0;
-    gap: 5px;
-
-    &__rocketLogo {
-      width: 50px;
-      height: 55px;
-    }
-
-    &__text {
-      color: $banana-flash;
-    }
-  }
-
-  .header {
-    padding: 10px 55px;
-  }
-
-  .banner,
-  .body {
-    padding: 40px 55px;
-  }
-
-  
-
-  @media (max-width: $desktop-view) {
-    .banner,
-    .body {
-      padding: 30px 20px;
-    }
-
-    .header {
-      padding: 10px 20px;
-    }
-  
-    .body {
-      .offers {
-        grid-template-areas: 
-          "A B"
-          "C D";
-
-        &__item {
-          height: 310px;
-        }
-      }
-    }
-  }
+}
 
 @media (max-width: $tablet-view) {
   .header {
@@ -343,6 +353,7 @@
       position: absolute;
       margin-top: 35px;
       left: 0;
+      gap: 0;
       width: 100%;
       justify-content: center;
       align-items: center;
@@ -369,13 +380,13 @@
       margin: 0;
       padding: 0;
       border: 0;
-      transition: height 0.4s ease-in-out;
+      transition: 0.4s ease-in-out;
     }
 
     #menu-toggle:checked ~ &__menu li {
       padding: 20px 0;
       height: 20px;
-      transition: height 0.4s ease-in-out;
+      transition: 0.4s ease-in-out;
     }
   }
 
@@ -383,12 +394,12 @@
     text-align: center;
 
     background: 
-      url("./assets/images/earth_logo.svg") top/300px no-repeat,
+      url("./assets/images/earth_logo.webp") top/300px no-repeat,
       linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(15, 20, 32, 0.79) 100%),
-      url("./assets/images/banner_logo.svg") center/cover no-repeat;
+      url("./assets/images/banner_logo.webp") center/cover no-repeat;
     
     &__title {
-      padding-top: 200px;
+      padding-top: 250px;
       font-size: 10vw;
     }
 
@@ -398,6 +409,10 @@
   }
   
   .body {
+    &__label {
+      font-size: 18px;
+    }
+
     .offers {
       grid-template-areas: 
         "A"
