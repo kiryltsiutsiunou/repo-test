@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/repo-test/static/css/main.52fb5be2.css",
+    "main.js": "/repo-test/static/js/main.8cd62d89.js",
+    "static/js/453.ed3810f9.chunk.js": "/repo-test/static/js/453.ed3810f9.chunk.js",
+    "static/media/banner_logo.svg": "/repo-test/static/media/banner_logo.f3d01d721c02defbcf52.svg",
+    "static/media/earth_logo.svg": "/repo-test/static/media/earth_logo.83d68f94de9d84f4e1bc.svg",
+    "static/media/rocket.svg": "/repo-test/static/media/rocket.a4389852c90b9d43571cac86eea0e8ab.svg",
+    "static/media/item-3.svg": "/repo-test/static/media/item-3.e45facf7130fba39c0e0.svg",
+    "static/media/item-4.svg": "/repo-test/static/media/item-4.95331ddbf441ff7ccdfb.svg",
+    "static/media/item-1.svg": "/repo-test/static/media/item-1.f646a7b54924d8d35fc2.svg",
+    "static/media/item-2.svg": "/repo-test/static/media/item-2.7811fd44c1f42d6a2417.svg",
+    "static/media/logo.svg": "/repo-test/static/media/logo.f4153131d3955bdfa609912a9f3b5caf.svg",
+    "static/media/basket.svg": "/repo-test/static/media/basket.5fdc8f10c95015c32240615c1ad34fbf.svg",
+    "index.html": "/repo-test/index.html",
+    "main.52fb5be2.css.map": "/repo-test/static/css/main.52fb5be2.css.map",
+    "main.8cd62d89.js.map": "/repo-test/static/js/main.8cd62d89.js.map",
+    "453.ed3810f9.chunk.js.map": "/repo-test/static/js/453.ed3810f9.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.52fb5be2.css",
+    "static/js/main.8cd62d89.js"
+  ]
+}
